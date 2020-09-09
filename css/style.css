@@ -1,8 +1,7 @@
 /* change these */
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800");
+@import url("https://use.typekit.net/ofv6hwf.css");
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
 
 * {
     box-sizing: border-box;
@@ -14,17 +13,34 @@ use the fonts in other ways in the font hierarchy etc. */
 
 /* change these */
 :root {
-    --bg-color: red;
-    --link-color: green;
-    --link-hover-color: blue;
-    --color-4: hotpink;
-    --color-5: rebeccapurple;
+    --main-color: #56b99e;
+    --cta-color: #f4e580;
+    --link-color: #f6c13e;
+    --link-hover-highlight-color: #bcdfd2;
+    --color-5: #b3dde3;
+    --color-6: #efc3c2;
 
-    --primary-font: "Open Sans", sans-serif;
-    --secondary-font: "Droid Serif", serif;
-    --main-text-color: #000;
+    --primary-font: "brandon-grotesque", sans-serif;
+    --secondary-font: "cormorant-garamond", serif;
+    --special-font: "turbinado-pro", sans-serif;
+    --main-text-color: #22211e;
+    --secondary-text-color: #b5b5b5;
 
     --white-space: 1rem;
+}
+
+body {
+    margin: 0;
+}
+
+.img-background {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+em {
+    font-family: var(--secondary-font);
 }
 
 button {
@@ -32,21 +48,23 @@ button {
 }
 
 a {
-    transition: all 3s;
-}
-
-button:hover {
-    background-color: var(--link-hover-color);
-    transform: scale(3) rotate(40deg);
-}
-
-button:active {
-    background-color: var(--bg-color);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, var(--link-hover-highlight-color) 50%);
+    background-repeat: repeat-x;
+    background-position: 0% 70%;
+    background-size: 200% 40%;
+    transition: background-position 0.5s ease-out;
 }
 
 a:hover {
-    color: var(--link-hover-color);
-    font-size: 4rem;
+    background-position: -100% 70%;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    background-color: var(--main-color);
 }
 
 html {
@@ -59,11 +77,15 @@ img {
     height: auto;
 }
 
+header {
+
+}
+
 header,
 main,
 footer {
-    max-width: 1300px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
     padding: calc(2 * var(--white-space));
 }
 
@@ -72,7 +94,7 @@ footer {
 }
 
 .full-width {
-    background: var(--bg-color);
+    background: var(--main-color);
     color: white;
     width: 100%;
 }
@@ -88,19 +110,21 @@ footer {
 }
 
 .header-wrapper h2 {
-    font-size: 1.6em;
-    color: rgba(255, 255, 255, 0.95);
+    font-size: 2em;
+    color: var(--link-hover-highlight-color);
     font-weight: bold;
     margin: var(--white-space) 0;
 }
 
-.header-wrapper h3 {
-    font-size: 1.2rem;
-    font-style: italic;
+.header-wrapper h4 {
+    font-size: 0.9rem;
+    font-weight: 300;
+
 }
 
-.header-wrapper h4 {
-    font-size: 0.8rem;
+.header-wrapper h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 main {
@@ -112,15 +136,20 @@ section {
 }
 
 .section-heading {
-    font-style: italic;
-    font-size: 1.3rem;
-    color: #777;
-    margin: 0.5rem 0;
+    font-style: normal;
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    margin: 0;
+    font-weight: 400;
 }
 
 ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+    align-items: center;
+    padding: 0;
 }
 
 .swatches li {
@@ -128,7 +157,8 @@ ul {
     margin: 1em;
     height: 100px;
     width: 100px;
-    border-radius: 50%
+    border-radius: 50%;
+    list-style-type: none;
 }
 
 ul li:last-child {
@@ -136,23 +166,27 @@ ul li:last-child {
 }
 
 .color-swatch-1 {
-    background-color: var(--bg-color);
+    background-color: var(--main-color);
 }
 
 .color-swatch-2 {
-    background-color: var(--link-color);
+    background-color: var(--link-hover-highlight-color);
 }
 
 .color-swatch-3 {
-    background-color: var(--link-hover-color);
+    background-color: var(--cta-color);
 }
 
 .color-swatch-4 {
-    background-color: var(--color-4);
+    background-color: var(--link-color);
 }
 
 .color-swatch-5 {
     background-color: var(--color-5);
+}
+
+.color-swatch-6 {
+    background-color: var(--color-6);
 }
 
 .textures li {
@@ -160,7 +194,8 @@ ul li:last-child {
     margin: 1em;
     height: 100px;
     width: 100px;
-    border-radius: 50%
+    border-radius: 50%;
+    list-style-type: none;
 }
 
 .texture-swatch-1 {
@@ -190,35 +225,60 @@ ul li:last-child {
     margin-bottom: 1rem;
 }
 
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.bckgr-green {
+    background-color: var(--main-color);
+}
+
 button {
     padding: 1rem;
-    border-radius: 4px;
-    background: var(--link-color);
     text-align: center;
     text-decoration: none;
-    font: bold 1.25em/1 var(--primary-font);
+    font: 500 1.25em/1 var(--primary-font);
     letter-spacing: 1px;
-    color: white;
     text-transform: uppercase;
-    text-shadow: 0px -1px 0px #0374a0;
     transition: all 0.2s ease;
     cursor: pointer;
     margin: 0 1rem 1rem 0;
+    border-style: solid;
+    border-radius: 2rem;
+}
+
+.primary-button {
+    color: var(--main-color);
+    background: var(--cta-color);
+    border: 0rem;
+
 }
 
 .secondary-button {
-    background: var(--color-5);
+    background: rgba(255, 0, 0, 0);
+    border-color: var(--cta-color);
+    border: 0.2rem;
+    border-style: solid;
+    color: var(--cta-color);
 }
 
+.white-text {
+    color: white;
+}
+
+/*
 button:focus,
 button:active,
 button:focus-within {
     outline: 0;
     border-radius: 4px;
 }
+*/
 
 .typography-main {
     color: var(--main-text-color);
+    margin: 0;
 }
 
 .h1-sample {
@@ -230,12 +290,14 @@ button:focus-within {
     font-family: var(--secondary-font);
     font-style: italic;
     font-size: 1.25rem;
+    font-weight: 500;
 }
 
 p.typography-sample {
-    font-family: var(--secondary-font);
+    font-family: var(--primary-font);
     line-height: 1.5;
     max-width: 960px;
+    font-weight: 300;
 }
 
 strong {
@@ -258,17 +320,38 @@ p[class*="font-details-"] {
     margin-top: 0.5rem;
     margin-bottom: calc(2 * var(--white-space));
     font-size: 0.75rem;
-    font-family: var(--secondary-font);
-    color: #6f6f6f;
+    font-family: var(--primary-font);
+    color: var(--secondary-text-color);
+    font-weight: 300;
 }
 
 .adjectives ul {
-    font-size: 2rem;
-    opacity: 0.5;
-}
-
-.adjectives ul {
+    font-family: var(--special-font);
+    font-size: 4rem;
+    display: flex;
+    justify-content: flex-start;
     flex-direction: column;
+}
+
+.adjectives li {
+    list-style-type: none;
+    padding: 0 2rem;
+}
+
+.young {
+    color: var(--main-color);
+}
+
+.dynamic {
+    color: var(--cta-color);
+}
+
+.fresh {
+    color: var(--link-hover-highlight-color);
+}
+
+.energetic {
+    color: var(--link-color);
 }
 
 footer {
@@ -309,14 +392,35 @@ footer {
         grid-row: row3-start;
     }
 
+    .buttons div {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 2rem;
+    }
+
     .swatches {
         grid-column: col2-start / col2-end;
         grid-row: row1-start;
     }
-    
+
     .textures {
         grid-column: col2-start / col2-end;
         grid-row: row2-start;
+    }
+
+    .textures span {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .icons {
+        width: 8rem;
+        height: auto;
+        padding: 1rem;
+        margin: 0;
     }
 
     /*
