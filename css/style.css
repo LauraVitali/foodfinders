@@ -13,18 +13,18 @@ use the fonts in other ways in the font hierarchy etc. */
 
 /* change these */
 :root {
-    --main-color: #56b99e;
-    --cta-color: #f4e580;
-    --link-color: #f6c13e;
-    --link-hover-highlight-color: #bcdfd2;
-    --color-5: #b3dde3;
-    --color-6: #efc3c2;
+    --main-color: #319b86;
+    --cta-color: #f2ca5a;
+    --link-color: #df573e;
+    --link-hover-highlight-color: #f2ca5a;
+    --color-5: #f28e4c;
+/*    --color-6: #;*/
 
     --primary-font: "brandon-grotesque", sans-serif;
     --secondary-font: "cormorant-garamond", serif;
     --special-font: "turbinado-pro", sans-serif;
-    --main-text-color: #22211e;
-    --secondary-text-color: #b5b5b5;
+    --main-text-color: #1b3642;
+/*    --secondary-text-color: #b5b5b5;*/
 
     --white-space: 1rem;
 }
@@ -170,7 +170,7 @@ ul li:last-child {
 }
 
 .color-swatch-2 {
-    background-color: var(--link-hover-highlight-color);
+    background-color: var(--color-5);
 }
 
 .color-swatch-3 {
@@ -182,7 +182,7 @@ ul li:last-child {
 }
 
 .color-swatch-5 {
-    background-color: var(--color-5);
+    background-color: var(--main-text-color);
 }
 
 .color-swatch-6 {
